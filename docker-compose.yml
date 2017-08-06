@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  messaging:
+    image: rabbitmq:3.6-alpine
+    expose:
+      - 5672
+
+  lambda-runner:
+    image: python:3.6
+    build:
+      context: ./functions
+      dockerfile: Dockerfile
+    volumes:
+      - ./functions:/opt/lettuce-cart

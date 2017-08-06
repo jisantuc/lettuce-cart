@@ -1,0 +1,7 @@
+channels:
+  - work-queue:
+      listeners:
+        - functions.work.main
+  - work-results:
+      listeners:
+        - functions.status.main
